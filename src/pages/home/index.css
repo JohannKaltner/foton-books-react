@@ -1,0 +1,277 @@
+.container {
+    height: 100%;
+    /* margin-bottom: 50px; */
+    background-color: #FFFCF9;
+    width: 100%;
+}
+
+
+
+.load-more {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+
+    .grid-books {
+        display: grid;
+        width: 100%;
+        margin: auto auto;
+        grid-template-columns: repeat(auto-fill, 7em);
+        grid-gap: 10px;
+        text-align: left;
+        overflow: scroll;
+        padding-bottom: 50px;
+    }
+
+    .search-input {
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .card {
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 5px;
+        width: 105px;
+        padding: 10px;
+        transition: all .2s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .card-image img {
+        width: 105px;
+        max-height: 153px;
+        height: 153px;
+        border-radius: 8px;
+    }
+
+    .card-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+
+        color: rgba(49, 49, 49, 0.8);
+    }
+
+    .author {
+        color: rgba(49, 49, 49, 0.8);
+        font-weight: 900;
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .user-title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+        height: 29px;
+
+        color: #54565A;
+    }
+
+    .user-title-container {
+        display: flex;
+        text-align: left;
+        padding: 30px 0;
+        margin-left: 31px;
+
+
+    }
+
+    .input {
+        width: 336px;
+        padding-left: 50px;
+        background: #FFFCF9;
+        border-radius: 10px;
+        border: none !important;
+        background: #FDFCFC;
+        box-shadow: none;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 5% center;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+    }
+
+
+    input:focus {
+        outline: none !important;
+    }
+
+    .input::placeholder {
+        /* padding: 20px; */
+        color: #54565A;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+
+.btn-title {
+    font-family: proDisplay;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+
+}
+
+@media screen and (min-width: 601px) {
+
+
+    .search-input {
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .grid-books {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+        justify-content: space-between;
+        grid-template-columns: repeat(auto-fill, 9em);
+        text-align: left;
+        grid-gap: 40px 130px;
+        margin-bottom: 80px;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+
+    .card {
+        transition: all .2s ease-in-out;
+        border-radius: 5px;
+        /* 5px rounded corners */
+        cursor: pointer;
+        width: 250px;
+
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        max-height: 300px;
+        border-radius: 8px;
+    }
+
+    .card-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 10px;
+
+        color: rgba(49, 49, 49, 0.8);
+    }
+
+    .author {
+        color: rgba(49, 49, 49, 0.8);
+        font-weight: 900;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .input {
+        width: 336px;
+        height: 48px;
+        padding-left: 50px;
+        background: #FFFCF9;
+        border-radius: 10px;
+        border: none !important;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+
+        /* border-color: #FFFCF9; */
+        /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 5% center;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        box-shadow: none !important;
+
+    }
+
+    .input::placeholder {
+        /* padding: 20px; */
+        color: #54565A;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .user-title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        padding-left: 70px;
+        margin-bottom: 20px;
+        /* identical to box height */
+        height: 29px;
+
+        color: #54565A;
+    }
+
+    .user-title-container {
+        display: grid;
+        margin-right: 30px;
+        text-align: center;
+        padding: 30px 0;
+        width: 70%;
+    }
+}
+
+.button {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    border: none;
+    height: 48px;
+    color: #000;
+    margin-bottom: 100px;
+    background: transparent;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926); */
+}
+
+body {
+    margin-bottom: 70px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}

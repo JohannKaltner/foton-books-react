@@ -1,0 +1,280 @@
+.container-detail {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+@media screen and (min-width: 601px) {
+
+    .detail-header {
+        background-color: #FFF6E5;
+        width: 100%;
+        height: 40%;
+        border-bottom-right-radius: 140px;
+    }
+
+    .title-container {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 1.5px;
+    }
+
+    .icon {
+        /* display: block; */
+        /* margin: 0 auto; */
+        width: 20px;
+        height: 20px;
+    }
+
+    .image-container {
+        margin-top: 30px;
+        width: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+    }
+
+    .icon-container {
+        position: absolute;
+        width: 7px;
+        height: 14px;
+        left: 32px;
+        top: 110px;
+
+    }
+
+    .image-container img {
+
+        width: 151px;
+        height: 234px;
+        border-radius: 8px;
+        object-fit: cover;
+        top: 130px;
+        z-index: inherit;
+        position: absolute;
+    }
+
+
+    .title-container {
+        position: absolute;
+
+        top: 349px;
+
+    }
+
+    .description-container {
+        /* position: absolute; */
+        position: absolute;
+        width: 335px;
+        height: 100%;
+        /* left: 20px; */
+        top: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.2px;
+        color: rgba(49, 49, 49, 0.6);
+        white-space: pre-line;
+    }
+
+    .circle {
+        position: absolute;
+        width: 63px;
+        height: 63px;
+        left: 833px;
+        top: 115px;
+        border-radius: 50%;
+        z-index: 1;
+        background: #00173D;
+    }
+
+    .circle-zebra {
+        border-radius: 50%;
+        /* background: #00173D; */
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 1000.39px;
+        top: 218.11px;
+
+        background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
+        transform: rotate(25deg);
+    }
+
+    .circle-zebra-2 {
+        border-radius: 50%;
+        position: absolute;
+        width: 100px;
+        flex-direction: column;
+
+        height: 100px;
+        left: 1400px;
+        top: 45px;
+        transform: rotate(25deg);
+        background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
+
+    }
+
+    .circle-ruby {
+        border-radius: 50%;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 816px;
+        top: 125px;
+        background: #FF6978;
+    }
+
+    .book-author {
+        color: #FF6978;
+        position: absolute;
+        left: 30px;
+        top: 444px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .description-container {
+        position: absolute;
+        width: 335px;
+        height: 275px;
+        left: 20px;
+        top: 470px;
+
+        font-size: 14px;
+        line-height: 25px;
+        /* or 179% */
+
+        letter-spacing: 0.2px;
+
+        color: rgba(49, 49, 49, 0.6);
+        white-space: pre-line;
+    }
+
+    .circle {
+        position: absolute;
+        width: 63px;
+        height: 63px;
+        left: 73px;
+        top: 115px;
+        border-radius: 50%;
+        background: #00173D;
+    }
+
+    .circle-zebra {
+        border-radius: 50%;
+        /* background: #00173D; */
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 242.39px;
+        top: 218.11px;
+
+        background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
+        transform: rotate(25deg);
+    }
+
+    /* .circle-zebra-2 {
+        border-radius: 50%;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+ 
+        left: 339.82px;
+        top: -34.45px;
+
+        transform: rotate(25deg);
+        background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
+
+    } */
+
+    .circle-ruby {
+        border-radius: 50%;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 46px;
+        top: 125px;
+
+        background: #FF6978;
+
+    }
+
+    .title-container {
+        position: absolute;
+
+        top: 349px;
+        left: 30px
+            /* width: ; */
+
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 29px;
+        letter-spacing: 1.5px;
+    }
+
+    .book-author {
+        color: #FF6978;
+        position: absolute;
+        left: 30px;
+        top: 424px;
+    }
+
+    .icon-container {
+        display: table;
+        padding: 20px;
+    }
+
+    .detail-header {
+        background-color: #FFF6E5;
+        width: 100%;
+        height: 300px;
+        border: 1px solid white;
+        border-bottom-right-radius: 50px;
+    }
+
+    .icon {
+        /* display: block; */
+        /* margin: 0 auto; */
+        width: 20px;
+        height: 20px;
+    }
+
+    .image-container {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    .image-container img {
+
+        box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.05);
+        width: 171px;
+        height: 254px;
+        border-radius: 8px;
+        z-index: inherit;
+        object-fit: cover;
+    }
+}
