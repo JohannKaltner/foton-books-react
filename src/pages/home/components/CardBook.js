@@ -2,10 +2,18 @@ import React from "react";
 import "../index.css";
 function CardBook({ book, onClick }) {
   const formatText = (text) => {
-    if (text.length > 20) {
-      return text.split(" ")[0];
-    } else return text;
+    // if (text.length > 20) {
+    //   const formattedText = [
+    //     text.split(" ")[0],
+    //     text.split(" ")[1],
+    //     text.split(" ")[2],
+    //   ].join(" ");
+    //   return formattedText;
+    // } else
+    return text;
   };
+
+  console.log(book.name);
 
   return (
     <div className="card" onClick={onClick}>

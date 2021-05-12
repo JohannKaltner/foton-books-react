@@ -52,8 +52,6 @@ function Home() {
     );
   };
 
-  // .filter((book) => book.name.toLowerCase().includes(search.toLowerCase()))
-
   const showMore = () => {
     paginate(next, next + booksPerPage, false);
     setNext(next + booksPerPage);

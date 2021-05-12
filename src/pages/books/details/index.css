@@ -17,6 +17,7 @@
     .title-container {
         margin-top: 50px;
         width: 100%;
+        text-align: center;
     }
 
     .title {
@@ -27,8 +28,6 @@
     }
 
     .icon {
-        /* display: block; */
-        /* margin: 0 auto; */
         width: 20px;
         height: 20px;
     }
@@ -70,11 +69,9 @@
     }
 
     .description-container {
-        /* position: absolute; */
         position: absolute;
         width: 335px;
         height: 100%;
-        /* left: 20px; */
         top: 500px;
         margin-left: auto;
         margin-right: auto;
@@ -101,7 +98,6 @@
 
     .circle-zebra {
         border-radius: 50%;
-        /* background: #00173D; */
         position: absolute;
         width: 48px;
         height: 48px;
@@ -155,12 +151,11 @@
         position: absolute;
         width: 335px;
         height: 275px;
-        left: 20px;
+        left: 30px;
         top: 470px;
 
         font-size: 14px;
         line-height: 25px;
-        /* or 179% */
 
         letter-spacing: 0.2px;
 
@@ -180,7 +175,6 @@
 
     .circle-zebra {
         border-radius: 50%;
-        /* background: #00173D; */
         position: absolute;
         width: 48px;
         height: 48px;
@@ -190,20 +184,6 @@
         background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
         transform: rotate(25deg);
     }
-
-    /* .circle-zebra-2 {
-        border-radius: 50%;
-        position: absolute;
-        width: 100px;
-        height: 100px;
- 
-        left: 339.82px;
-        top: -34.45px;
-
-        transform: rotate(25deg);
-        background: url(https://s3-alpha-sig.figma.com/img/8270/a92b/199af19904ecf050100462fca9173607?Expires=1621209600&Signature=BsJ-xJTETVufswVVqJuaK9uBgq2jeYShwhzRgmAyhjAGizqoTGGqrieyYu3NVtGit88uaR5ylsxgKE-~387iraz1UtWecMwMshUOKGutSsVKVkqO0AcWBIRk5kHKIILZJ1GXyRzDdreWQxEZqO7O44xjlH2SwfTOWHJbKHyF3wTrMfQDNUweVpRX79qe8sTf7Pt9-AOErIw-RSuvuylCg777e9p9SPlg~ryXHKzKQLJN7yZO~qnCn3oplbSFrhBTF5-QmltZlPYX4sBIOBkD80-fY7jxkQoa7-cH1FXDKJ5UMrz4lPGoNOpDb7fYwQkvvkO71-PQ0~cDc~FuEcD46w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA);
-
-    } */
 
     .circle-ruby {
         border-radius: 50%;
@@ -222,8 +202,6 @@
 
         top: 349px;
         left: 30px
-            /* width: ; */
-
     }
 
     .title {
@@ -254,8 +232,6 @@
     }
 
     .icon {
-        /* display: block; */
-        /* margin: 0 auto; */
         width: 20px;
         height: 20px;
     }
