@@ -1,119 +1,143 @@
-import { React, useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./index.css";
-import useForm from "./../../../services/utils/form";
-import defaultUrl from "./../../../services/api/api";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useForm from "../../../services/utils/Form";
+import defaultUrl from "../../../services/api/api"; 
+import { useHistory } from "react-router-dom";
 
 function BookForm() {
-  const [{ values, loading }, handleChange, handleSubmit] = useForm();
+  let history = useHistory()  
   const [previewImage, setPreviewImage] = useState("");
-  // const [errors, setErrors] = useState({ description: true, name: true });
-
-  function encodeImageFileAsURL(event) {
-    var file = event.target.files[0];
+  const { handleSubmit, handleChange, data, errors } = useForm({
+    validations: {
+     name: { 
+        required: {
+        value: true,
+        message: 'This field is required',
+        },  
+    },
+    author: {
+      required: {
+        value: true,
+        message: 'This field is required',
+      },
+    },
+    description: {
+      required: {
+        value: true,
+        message: 'This field is required',
+      },
+      custom: {
+        greaterThanMax: (value) => value.length <= 2000,
+        message: 'Character limit exceeded',
+      },
+    }, 
+  },
+  onSubmit: () => handleBookForm()
+  });
+  
+  const handleFileChange = (event) => {  
+    var file = event.target.files[0]; 
     var reader = new FileReader();
-    reader.onloadend = function () {
-      handleChange({
-        target: { name: "image", value: reader.result },
-      });
-      setPreviewImage(reader.result);
+    reader.onloadend = function () {  
+     setPreviewImage(reader.result)
+      console.log(previewImage)
     };
     reader.readAsDataURL(file);
   }
 
-  const handleBookForm = async () => {
-    // hasError();
+  
+  const handleBookForm = async () => {   
     fetch(defaultUrl + "books", {
-      method: "post",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+          method: "post",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          
+          body: JSON.stringify({...data, image:previewImage}),
+        })
+      .then((res) => {
+        res.json()
+        history.push('/')
+      });
+   
   };
-
-  const disableBtn =
-    values.description === "" || values.author === "" || values.name === "";
-
-  useEffect(() => {
-    console.log(disableBtn);
-  }, [values]);
-
+ 
   return (
     <div className="container-form">
       <div className="form-wrapper">
         <p className="page-title">Add a new book</p>
-        <form onSubmit={handleSubmit(handleBookForm)}>
+        <form onSubmit={handleSubmit}>
           <div className="field input-file-container">
             <label className=" custom-file-upload">
               <input
-                value={values.file || ""}
+                value={data.file}
                 name="file"
-                type="file"
-                onChange={encodeImageFileAsURL}
-              />
+                type='file'
+                onChange={(e) => handleFileChange(e)}
+                />
               Select Image
             </label>
           </div>
+        
           <div className="preview">
             {previewImage && <img className="thumb" src={previewImage} />}
           </div>
           <div
             className={
-              "field " + (values.name?.length < 1 || false ? "field-error" : "")
+              "field " + (errors.name && "field-error")
             }
-          >
+            >
             <label>Name</label>
             <input
+              type='text'
               error={true}
-              value={values.name || ""}
+              value={data.name}
               name="name"
-              onChange={handleChange}
+              onChange={handleChange('name')}
             />
-            {values.name?.length < 1 && (
-              <span className="errorMessage">this field cannot be empty</span>
-            )}
+            {errors.name  && (
+              <span className="errorMessage">{errors.name}</span>
+              )}
           </div>
           <div
             className={
               "field " +
-              (values.author?.length < 1 || false ? "field-error" : "")
+              (errors.author ? "field-error" : "")
             }
-          >
+            >
             <label>Author</label>
             <input
-              value={values.author || ""}
+              type='text'
+              value={data.author}
               name="author"
-              onChange={handleChange}
+              onChange={handleChange('author')}
             />
-            {values.author?.length < 1 && (
-              <span className="errorMessage">this field cannot be empty</span>
+            {errors.author  && (
+              <span className="errorMessage">{errors.author}</span>
             )}
           </div>
           <div
             className={
               "field " +
-              (values.description?.length < 1 || false ? "field-error" : "")
+              (errors.description ? "field-error" : "")
             }
           >
             <label>Description</label>
 
             <textarea
-              value={values.description || ""}
+              value={data.description}
               maxLength="2000"
               defaultValue=""
+              type="text"
               name="description"
-              onChange={handleChange}
+              onChange={handleChange('description')}
             ></textarea>
-            {values.description?.length < 1 && (
-              <span className="errorMessage">this field cannot be empty</span>
+           {errors.description && (
+              <span className="errorMessage">{errors.description}</span>
             )}
             <span className="input-range">
-              {values.description?.length || "0"} /2000
+              {data.description?.length || "0"} /2000
             </span>
           </div>
 
@@ -129,8 +153,7 @@ function BookForm() {
               <div className="half-spinner"></div>
             </div>
           ) : (
-            <button
-              disabled={disableBtn}
+            <button 
               className="submitButton"
               type="submit"
             >

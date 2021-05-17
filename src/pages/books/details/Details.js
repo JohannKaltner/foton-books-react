@@ -25,15 +25,12 @@ function Details() {
       });
   };
 
-  const doExit = () => {
-    setBook({});
-    history.push("/");
-  };
+  
 
   return (
     <div className="container-detail">
       <div className="detail-header">
-        <div className="icon-container" onClick={doExit}>
+        <div className="icon-container" onClick={() => history.goBack()}>
           <img className="icon" src="/back.svg" />
         </div>
         <div className="circle" />

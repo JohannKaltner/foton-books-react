@@ -30,10 +30,24 @@
         padding-bottom: 50px;
     }
 
+    .margin-50 {
+        margin: 60px 50px 50px 50px !important;
+    }
+
+    .search {
+        margin: 0 50px 20px 50px !important;
+
+    }
+
     .search-input {
         display: flex;
         justify-content: center;
-        padding: 50px;
+        padding: 20px;
+    }
+
+    .search-input input {
+        border: 1px solid lightgrey;
+
     }
 
     .card {
@@ -47,6 +61,10 @@
 
     .card:hover {
         transform: scale(1.1);
+    }
+
+    .back {
+        display: inline-block;
     }
 
     .card-image img {
@@ -142,7 +160,11 @@
     .search-input {
         display: flex;
         justify-content: center;
-        margin: 50px;
+        margin: 20px;
+    }
+
+    .back {
+        display: inline-block;
     }
 
     .grid-books {

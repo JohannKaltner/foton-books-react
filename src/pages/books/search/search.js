@@ -1,19 +1,22 @@
-import React from "react";
-import "./index.css";
-import CardBook from "./components/CardBook";
-import defaultUrl from "./../../services/api/api";
+import React,{useRef} from "react";
+import "../../home/index.css"; 
 import { useHistory } from "react-router-dom";
+import defaultUrl from '../../../services/api/api';
+import CardBook from '../../home/components/CardBook';
 
-function Home() {
+function Search() {
   const [books, setBooks] = React.useState([]);
   const [paginatedBooks, setPaginationBooks] = React.useState([]);
   const [next, setNext] = React.useState(3);
   const [search, setSearch] = React.useState("");
+  const inputRef = useRef(null);
 
   let history = useHistory();
   const booksPerPage = 4;
 
-  React.useEffect(() => {
+    React.useEffect(() => {
+    inputRef.current.focus();
+
     GetBooks();
   }, []);
 
@@ -29,16 +32,7 @@ function Home() {
     fetch(defaultUrl + "books")
       .then(function (response) {
         response.json().then(function (data) {
-
-          //  Obs : Array triplicado para ser possivel validar
-          // a feature de Paginação, para exemplo real, descomentar
-          // comente a linha abaixo, por gentileza
-          const cloneArray = [...data,...data,...data]
-          
-          // e descomente essa
-          // const cloneArray = [data]
-        
-          
+          const cloneArray = [...data, ...data, ...data];
           setBooks(cloneArray);
         });
       })
@@ -66,41 +60,25 @@ function Home() {
     setNext(next + booksPerPage);
   };
 
-  const GoTo = (route, params ='') => {
-    history.push(`/${route}/${params}`);
+  const GoTo =  (route, params = '')=> {
+    history.push(`${route}${params}`);
   };
-
-  const runSearch = (event) =>{
-    GoTo('search')
-    
-  }
+ 
 
   return (
-    <div className="container">
-        <div className="search-input margin-50">
+      <div className="container"> 
+          <div className="search-input back" onClick={() => history.goBack()}>
+          <img className="icon" src="/back.svg" />
+        </div>
+      <div className="search-input search">
           <input
-          onClick={ () => runSearch()}
-         // onChange={(event) => setSearch(event.target.value)}
+          ref={inputRef}
+          onChange={(event) => setSearch(event.target.value)}
           className="input"
           placeholder="Search Book"
           />
-      </div>
-         
-      <div className="user-title-container">
-        <span className="user-title">
-          Hi,
-          <span style={{ color: "#FF6978", marginRight: 10 }}>
-            &nbsp;Mehmed Al Fatih
-          </span>
-          <span style={{ width: 24 }}>👋</span>
-        </span>
-      </div>
-      <div className="grid-books">
-        {/* {console.log(
-          paginatedBooks.filter((book) =>
-            book.name.toLowerCase().includes(search.toLowerCase())
-          )
-        )} */}
+      </div> 
+      <div className="grid-books"> 
         {paginatedBooks
           .filter((book) =>
             book.name.toLowerCase().includes(search.toLowerCase())
@@ -108,7 +86,7 @@ function Home() {
           .map((book) => {
             return (
               <>
-                <CardBook onClick={() => GoTo('details',book.id)} book={book} />
+                <CardBook onClick={() => GoTo('/details/',book.id)} book={book} />
               </>
             );
           })}
@@ -120,4 +98,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Search;
